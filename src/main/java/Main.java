@@ -1,13 +1,14 @@
 import solutions.LargestProductInASeries;
 import solutions.PrimeNumberFinder;
+import solutions.SpecialPythagoreanTriplet;
 
 public class Main {
 
     public static void main(String[] args) {
 
         //primeNumberFinder(10001);
-        largestProduct();
-
+        //largestProduct();
+        pythagoreanTriplet(1000);
     }
 
     public static void primeNumberFinder(int index)
@@ -36,6 +37,19 @@ public class Main {
         System.out.println("Largest Product in the series is " + Integer.toString(largestProduct));
         System.out.println("Time required for this computation is in milliseconds is " + Long.toString((endTime-startTime)/1000000));
 
+    }
+
+    public static void pythagoreanTriplet(int sum)
+    {
+        SpecialPythagoreanTriplet specialPythagoreanTriplet = new SpecialPythagoreanTriplet();
+        int product;
+
+        long startTime = System.nanoTime();
+        product = specialPythagoreanTriplet.productOfSpecial(sum);
+        long endTime = System.nanoTime();
+
+        System.out.println("Product of the triplets is " + Integer.toString(product));
+        System.out.println("Time required for this computation is in milliseconds is " + Long.toString((endTime-startTime)/1000000));
     }
 
 
