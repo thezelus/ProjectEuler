@@ -31,11 +31,11 @@ public class SumOfPrimesTest {
         assertEquals("Compare length of list", 6, actualListOfPrimeNumbers.size());
 
         assertEquals("First number", (Object) 2L, actualListOfPrimeNumbers.get(0));
-        assertEquals("First number", (Object) 3L, actualListOfPrimeNumbers.get(1));
-        assertEquals("First number", (Object) 5L, actualListOfPrimeNumbers.get(2));
-        assertEquals("First number", (Object) 7L, actualListOfPrimeNumbers.get(3));
-        assertEquals("First number", (Object) 11L, actualListOfPrimeNumbers.get(4));
-        assertEquals("First number", (Object) 13L, actualListOfPrimeNumbers.get(5));
+        assertEquals("Second number", (Object) 3L, actualListOfPrimeNumbers.get(1));
+        assertEquals("Third number", (Object) 5L, actualListOfPrimeNumbers.get(2));
+        assertEquals("Fourth number", (Object) 7L, actualListOfPrimeNumbers.get(3));
+        assertEquals("Fifth number", (Object) 11L, actualListOfPrimeNumbers.get(4));
+        assertEquals("Sixth number", (Object) 13L, actualListOfPrimeNumbers.get(5));
     }
 
 
