@@ -15,7 +15,7 @@ public class PrimeNumberFinder {
         return number;
     }
 
-    boolean primalityTester(long number)
+    public boolean primalityTester(long number)
     {
         boolean flag = true;
         double squareRoot = Math.sqrt(number);

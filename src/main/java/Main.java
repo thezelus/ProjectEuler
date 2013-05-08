@@ -1,6 +1,7 @@
 import solutions.LargestProductInASeries;
 import solutions.PrimeNumberFinder;
 import solutions.SpecialPythagoreanTriplet;
+import solutions.SumOfPrimes;
 
 public class Main {
 
@@ -8,7 +9,8 @@ public class Main {
 
         //primeNumberFinder(10001);
         //largestProduct();
-        pythagoreanTriplet(1000);
+        //pythagoreanTriplet(1000);
+        sumOfPrimes(2000000);
     }
 
     public static void primeNumberFinder(int index)
@@ -49,6 +51,19 @@ public class Main {
         long endTime = System.nanoTime();
 
         System.out.println("Product of the triplets is " + Integer.toString(product));
+        System.out.println("Time required for this computation is in milliseconds is " + Long.toString((endTime-startTime)/1000000));
+    }
+
+    public static void sumOfPrimes(int limit)
+    {
+        SumOfPrimes sumOfPrimes = new SumOfPrimes();
+        long sum;
+
+        long startTime = System.nanoTime();
+        sum = sumOfPrimes.sumOfPrimeNumbers(limit);
+        long endTime = System.nanoTime();
+
+        System.out.println("Sum of primes less than " + Integer.toString(limit) +" is " + Long.toString(sum));
         System.out.println("Time required for this computation is in milliseconds is " + Long.toString((endTime-startTime)/1000000));
     }
 
