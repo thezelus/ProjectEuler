@@ -1,7 +1,4 @@
-import solutions.LargestProductInASeries;
-import solutions.PrimeNumberFinder;
-import solutions.SpecialPythagoreanTriplet;
-import solutions.SumOfPrimes;
+import solutions.*;
 
 public class Main {
 
@@ -10,7 +7,8 @@ public class Main {
         //primeNumberFinder(10001);
         //largestProduct();
         //pythagoreanTriplet(1000);
-        sumOfPrimes(2000000);
+        //sumOfPrimes(2000000);
+        highlyDivisibleTriangularNumber(500);
     }
 
     public static void primeNumberFinder(int index)
@@ -64,6 +62,20 @@ public class Main {
         long endTime = System.nanoTime();
 
         System.out.println("Sum of primes less than " + Integer.toString(limit) +" is " + Long.toString(sum));
+        System.out.println("Time required for this computation is in milliseconds is " + Long.toString((endTime-startTime)/1000000));
+    }
+
+
+    public static void highlyDivisibleTriangularNumber(int minNumberofDivisors)
+    {
+        HighlyDivisibleTriangularNumber highlyDivisibleTriangularNumber = new HighlyDivisibleTriangularNumber();
+        long triangularNumber;
+
+        long startTime = System.nanoTime();
+        triangularNumber = highlyDivisibleTriangularNumber.findTriangularNumber(minNumberofDivisors);
+        long endTime = System.nanoTime();
+
+        System.out.println("Triangular number with " + Integer.toString(minNumberofDivisors) +" divisors is " + Long.toString(triangularNumber));
         System.out.println("Time required for this computation is in milliseconds is " + Long.toString((endTime-startTime)/1000000));
     }
 
