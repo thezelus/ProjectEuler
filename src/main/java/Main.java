@@ -8,7 +8,8 @@ public class Main {
         //largestProduct();
         //pythagoreanTriplet(1000);
         //sumOfPrimes(2000000);
-        highlyDivisibleTriangularNumber(500);
+        //highlyDivisibleTriangularNumber(500);
+        longestCollatzSequenceNumber(1000000L);
     }
 
     public static void primeNumberFinder(int index)
@@ -76,6 +77,19 @@ public class Main {
         long endTime = System.nanoTime();
 
         System.out.println("Triangular number with " + Integer.toString(minNumberofDivisors) +" divisors is " + Long.toString(triangularNumber));
+        System.out.println("Time required for this computation is in milliseconds is " + Long.toString((endTime-startTime)/1000000));
+    }
+
+    public static void longestCollatzSequenceNumber(long upperLimit)
+    {
+        LongestCollatzSequence longestCollatzSequence = new LongestCollatzSequence();
+        long collatzNumber;
+
+        long startTime = System.nanoTime();
+        collatzNumber = longestCollatzSequence.getStartPointForLongestCollatzSequence(upperLimit);
+        long endTime = System.nanoTime();
+
+        System.out.println("Collatz number is " + Long.toString(collatzNumber));
         System.out.println("Time required for this computation is in milliseconds is " + Long.toString((endTime-startTime)/1000000));
     }
 
