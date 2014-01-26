@@ -18,6 +18,6 @@ public class PrimeNumberFinderTest {
 
     @Test
     public void testFindPrimeNumber() throws Exception {
-        assertEquals(11, primeNumberFinder.findPrimeNumber(5));
+        assertEquals(11, primeNumberFinder.primaryMethod(5));
     }
 }

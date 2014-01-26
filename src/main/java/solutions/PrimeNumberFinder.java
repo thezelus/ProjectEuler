@@ -4,7 +4,7 @@ public class PrimeNumberFinder {
 
     public int primeNumberIndex = 0;
 
-    public long findPrimeNumber(int index)
+    public long primaryMethod(Integer index)
     {
         long number = 1;
         while(primeNumberIndex < index)

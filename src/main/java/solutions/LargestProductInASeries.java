@@ -25,7 +25,7 @@ public class LargestProductInASeries {
             "71636269561882670428252483600823257530420752963450";
 
 
-    public int getLargestProduct(String numberSeries)
+    public int primaryMethod(String numberSeries)
     {
         int largestProduct = 0;
         int seriesLength = numberSeries.length();

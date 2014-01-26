@@ -8,7 +8,8 @@ public class HighlyDivisibleTriangularNumber {
 
     long triangularNumber;
 
-    public long findTriangularNumber(int minNumberOfDivisors)
+    //findTriangularNumber
+    public long primaryMethod(Integer minNumberOfDivisors)
     {
         int numberOfDivisors = 1;
         long triangularNumberIndex = 0;

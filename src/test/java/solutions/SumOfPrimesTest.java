@@ -2,7 +2,6 @@ package solutions;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static junit.framework.Assert.assertEquals;
@@ -13,7 +12,7 @@ public class SumOfPrimesTest {
 
     @Test
     public void testSumOfPrimeNumbers() throws Exception {
-        long sum = sumOfPrimes.sumOfPrimeNumbers(10);
+        long sum = sumOfPrimes.primaryMethod(10);
         assertEquals(17, sum);
     }
 

@@ -6,7 +6,8 @@ import java.util.ListIterator;
 
 public class SumOfPrimes {
 
-    public long sumOfPrimeNumbers(int limit)
+    //sumOfPrimes
+    public long primaryMethod(Integer limit)
     {
         PrimeNumberFinder primeNumberFinder = new PrimeNumberFinder();
         long sum = 0;

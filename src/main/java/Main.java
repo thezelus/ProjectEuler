@@ -1,96 +1,31 @@
 import solutions.*;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException, ClassNotFoundException {
 
-        //primeNumberFinder(10001);
-        //largestProduct();
-        //pythagoreanTriplet(1000);
-        //sumOfPrimes(2000000);
-        //highlyDivisibleTriangularNumber(500);
-        longestCollatzSequenceNumber(1000000L);
-    }
-
-    public static void primeNumberFinder(int index)
-    {
-        PrimeNumberFinder primeNumberFinder = new PrimeNumberFinder();
-        long primeNumberAtIndex;
-
-        long startTime = System.nanoTime();
-        primeNumberAtIndex = primeNumberFinder.findPrimeNumber(index);
-        long endTime = System.nanoTime();
-
-        System.out.println("Prime number at the index " + Integer.toString(primeNumberFinder.primeNumberIndex) + " is "+Long.toString(primeNumberAtIndex));
-        System.out.println("Time required for this computation in milliseconds is " + Long.toString((endTime-startTime)/1000000));
+        //benchmarker(new PrimeNumberFinder(), 10001);
+        //benchmarker(new LargestProductInASeries(), LargestProductInASeries.series);
+        //benchmarker(new SpecialPythagoreanTriplet(), 1000);
+        //benchmarker(new SumOfPrimes(), 2000000);
+        //benchmarker(new HighlyDivisibleTriangularNumber(), 500);
+        //benchmarker(new LongestCollatzSequence(), 1000000L);
+        benchmarker(new PowerDigitSum(), 1000);
 
     }
 
-    public static void largestProduct()
-    {
-        LargestProductInASeries largestProductInASeries = new LargestProductInASeries();
-        int largestProduct;
+    public static void benchmarker(Object classObject, Object parameter) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, InstantiationException, ClassNotFoundException {
+        Method method = classObject.getClass().getMethod("primaryMethod", parameter.getClass());
 
         long startTime = System.nanoTime();
-        largestProduct = largestProductInASeries.getLargestProduct(largestProductInASeries.series);
+        Object output = method.invoke(classObject, parameter);
         long endTime = System.nanoTime();
 
-        System.out.println("Largest Product in the series is " + Integer.toString(largestProduct));
-        System.out.println("Time required for this computation is in milliseconds is " + Long.toString((endTime-startTime)/1000000));
-
-    }
-
-    public static void pythagoreanTriplet(int sum)
-    {
-        SpecialPythagoreanTriplet specialPythagoreanTriplet = new SpecialPythagoreanTriplet();
-        int product;
-
-        long startTime = System.nanoTime();
-        product = specialPythagoreanTriplet.productOfSpecial(sum);
-        long endTime = System.nanoTime();
-
-        System.out.println("Product of the triplets is " + Integer.toString(product));
-        System.out.println("Time required for this computation is in milliseconds is " + Long.toString((endTime-startTime)/1000000));
-    }
-
-    public static void sumOfPrimes(int limit)
-    {
-        SumOfPrimes sumOfPrimes = new SumOfPrimes();
-        long sum;
-
-        long startTime = System.nanoTime();
-        sum = sumOfPrimes.sumOfPrimeNumbers(limit);
-        long endTime = System.nanoTime();
-
-        System.out.println("Sum of primes less than " + Integer.toString(limit) +" is " + Long.toString(sum));
-        System.out.println("Time required for this computation is in milliseconds is " + Long.toString((endTime-startTime)/1000000));
-    }
-
-
-    public static void highlyDivisibleTriangularNumber(int minNumberofDivisors)
-    {
-        HighlyDivisibleTriangularNumber highlyDivisibleTriangularNumber = new HighlyDivisibleTriangularNumber();
-        long triangularNumber;
-
-        long startTime = System.nanoTime();
-        triangularNumber = highlyDivisibleTriangularNumber.findTriangularNumber(minNumberofDivisors);
-        long endTime = System.nanoTime();
-
-        System.out.println("Triangular number with " + Integer.toString(minNumberofDivisors) +" divisors is " + Long.toString(triangularNumber));
-        System.out.println("Time required for this computation is in milliseconds is " + Long.toString((endTime-startTime)/1000000));
-    }
-
-    public static void longestCollatzSequenceNumber(long upperLimit)
-    {
-        LongestCollatzSequence longestCollatzSequence = new LongestCollatzSequence();
-        long collatzNumber;
-
-        long startTime = System.nanoTime();
-        collatzNumber = longestCollatzSequence.getStartPointForLongestCollatzSequence(upperLimit);
-        long endTime = System.nanoTime();
-
-        System.out.println("Collatz number is " + Long.toString(collatzNumber));
-        System.out.println("Time required for this computation is in milliseconds is " + Long.toString((endTime-startTime)/1000000));
+        System.out.println(classObject.getClass().toString() + " is " + output.toString());
+        System.out.println("Time required for this computation is in milliseconds is " + Long.toString((endTime - startTime) / 1000000));
     }
 
 

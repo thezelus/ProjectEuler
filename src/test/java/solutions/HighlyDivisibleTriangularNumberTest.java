@@ -10,8 +10,8 @@ public class HighlyDivisibleTriangularNumberTest {
 
     @Test
     public void testFindTriangularNumber() throws Exception {
-        assertEquals(testHighlyDivisibleTriangularNumber.findTriangularNumber(4), 6);
-        assertEquals(testHighlyDivisibleTriangularNumber.findTriangularNumber(5), 28);
+        assertEquals(testHighlyDivisibleTriangularNumber.primaryMethod(4), 6);
+        assertEquals(testHighlyDivisibleTriangularNumber.primaryMethod(5), 28);
     }
 
     @Test

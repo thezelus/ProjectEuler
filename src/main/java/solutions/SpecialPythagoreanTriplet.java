@@ -2,8 +2,8 @@ package solutions;
 
 public class SpecialPythagoreanTriplet {
 
-    public int productOfSpecial(int sum)
-    {
+    public int primaryMethod(Integer sum)
+    {   //product of the triplets given the sum
         int i, j, k;
         i = 1;
         j = sum;

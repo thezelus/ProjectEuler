@@ -8,7 +8,7 @@ public class LongestCollatzSequence {
 
     long number = 1, maxChainLength = 0;
 
-    public long getStartPointForLongestCollatzSequence(long upperLimit)
+    public long primaryMethod(Long upperLimit)
     {
         if(upperLimit ==0)
             return 0;

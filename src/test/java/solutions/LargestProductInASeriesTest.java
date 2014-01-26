@@ -9,7 +9,7 @@ public class LargestProductInASeriesTest {
     public void testGetLargestProduct() throws Exception {
 
         LargestProductInASeries largestProductInASeriesTest = new LargestProductInASeries();
-        int largestProductActual = largestProductInASeriesTest.getLargestProduct("123451234512345");
+        int largestProductActual = largestProductInASeriesTest.primaryMethod("123451234512345");
 
         assertEquals(120, largestProductActual);
     }

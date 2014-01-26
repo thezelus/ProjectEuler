@@ -9,7 +9,7 @@ public class SpecialPythagoreanTripletTest {
     public void testProductOfSpecial() throws Exception {
 
         SpecialPythagoreanTriplet specialPythagoreanTriplet = new SpecialPythagoreanTriplet();
-        assertEquals("3*4*5", (3*4*5), specialPythagoreanTriplet.productOfSpecial(12));
-        assertEquals("36*77*85", (36*77*85), specialPythagoreanTriplet.productOfSpecial(36+77+85));
+        assertEquals("3*4*5", (3*4*5), specialPythagoreanTriplet.primaryMethod(12));
+        assertEquals("36*77*85", (36*77*85), specialPythagoreanTriplet.primaryMethod(36 + 77 + 85));
     }
 }
